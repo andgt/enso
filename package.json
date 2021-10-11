@@ -1,0 +1,31 @@
+{
+  "name": "kmk",
+  "version": "1.0.0",
+  "description": "test exercise",
+  "main": "index.js",
+  "scripts": {
+    "editorconfig": "editorconfig",
+    "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp styles",
+    "start": "gulp"
+  },
+  "author": "anatoly",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "stylelint-config-htmlacademy": "^0.1.10"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.3.7",
+    "browser-sync": "^2.27.5",
+    "editorconfig": "^0.15.3",
+    "gh-pages": "^3.2.3",
+    "gulp-less": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.3.9",
+    "stylelint": "^13.13.1"
+  }
+}
