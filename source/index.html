@@ -5,17 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>ENSO</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/swiper-bundle.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicon.svg">
 </head>
 <body class="page__body">
   <header class="header">
-    <div class="container">
+    <div class="header__wrapper container">
       <div class="header__logo">
         <picture>
-          <source media="(min-width: 768px)" srcset="img/logo.svg">
-          <img class="header__logo-img" src="img/mobile/icon/logo-mobile.svg" width="25" height="26" alt="Логотип компаниии">
+          <source media="(min-width: 768px)" srcset="img/icon/logo.svg">
+          <img class="header__logo-img" src="img/icon/icon-mobile/logo-mobile.svg" width="25" height="26" alt="Логотип компаниии">
         </picture>
       </div>
-      <nav class="main-nav">
+      <nav class="main-nav main-nav--closed">
+        <button class="main-nav__button-toggle">
+          <span class="visually-hidden">Открыть/закрыть меню</span>
+        </button>
         <ul class="main-nav__list">
           <li class="main-nav__item">
             <a class="main-nav__link" href="#">Компания</a>
@@ -38,36 +44,55 @@
   </header>
   <main class="main">
     <section class="promo">
-      <div class="container">
-        <h1 class="main__title">Строительная компания</h1>
+      <div class="promo__wrapper container">
+        <h1 class="main__title">Прогрессивные городские решения</h1>
         <p class="promo__description">Девелоперская компания ENSO занимается разработкой, реализацией и управлением проектами в сфере жилой и коммерческой недвижимости.</p>
       </div>
     </section>
     <section class="mission">
-      <h2 class="main__subtitle">Миссия</h2>
-      <div class="mission__info">
-        <p class="mission__main-text">Мы находимся в поиске новых решений для улучшения городского пространства.</p>
-        <p class="mission__text">Стремимся наполнять его новым смыслом, идеей, которые вдохновляли бы людей возвращаться в наши здания снова и снова, оставаться, жить там.</p>
+      <div class="container">
+        <h2 class="main__subtitle">Миссия</h2>
+        <div class="mission__info">
+          <p class="mission__text mission__text--main">Мы находимся в поиске новых решений для улучшения городского пространства.</p>
+          <p class="mission__text">Стремимся наполнять его новым смыслом, идеей, которые вдохновляли бы людей возвращаться в наши здания снова и снова, оставаться, жить там.</p>
+        </div>
       </div>
     </section>
     <section class="management">
-      <h2 class="main__subtitle">Менеджмент</h2>
-      <div class="management__gallery">
-        <div class="management__item">
-          <img class="management__img" src="#">
-          <p class="management__name">Рамиль Мехтиев</p>
-          <div class="management__info">
-            <p class="management__posiiton">Исполнительный директор</p>
-            <p class="management__description">15 лет опыта работы в крупных коммерческих структурах, из них более 10 лет в девелопменте. Полученный опыт и лидерские способности использует для реализации функциональных, смелых и инновационных решений на рынке недвижимости.</p>
+      <div class="container">
+        <h2 class="main__subtitle main__subtitle--management">Менеджмент</h2>
+        <div class="swiper management__slider">
+          <div class="management__gallery swiper-wrapper">
+            <div class="management__item swiper-slide">
+              <div class="management__inner">
+                <img class="management__picture" src="img/desktop/manager1.jpg" width="440" height="560">
+                <p class="management__name">Рамиль Мехтиев</p>
+                <div class="management__info">
+                  <p class="management__position">Исполнительный директор</p>
+                  <p class="management__description">15 лет опыта работы в крупных коммерческих структурах, из них более 10 лет в девелопменте. Полученный опыт и лидерские способности использует для реализации функциональных, смелых и инновационных решений на рынке недвижимости.</p>
+                  <span class="management__decor-line management__decor-line--row management__decor-line--row-top"></span>
+                  <span class="management__decor-line management__decor-line--column management__decor-line--column-right"></span>
+                  <span class="management__decor-line management__decor-line--row management__decor-line--row-bottom"></span>
+                  <span class="management__decor-line management__decor-line--column management__decor-line--column-left"></span>
+                </div>
+              </div>
+            </div>
+            <div class="management__item swiper-slide">
+              <div class="management__inner">
+                <img class="management__picture" src="img/desktop/manager2.jpg" width="440" height="560">
+                <p class="management__name">Сергей Король</p>
+                <div class="management__info">
+                  <p class="management__position">Директор по развитию</p>
+                  <p class="management__description">25 лет в недвижимости. Работал в крупнейших международных, местных девелоперских и консалтинговых компаниях. Ведущий эксперт страны в области развития и реализации коммерческой и жилой недвижимости.</p>
+                  <span class="management__decor-line management__decor-line--row management__decor-line--row-top"></span>
+                  <span class="management__decor-line management__decor-line--column management__decor-line--column-right"></span>
+                  <span class="management__decor-line management__decor-line--row management__decor-line--row-bottom"></span>
+                  <span class="management__decor-line management__decor-line--column management__decor-line--column-left"></span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="management__item">
-          <img class="management__img" src="#">
-          <p class="management__name">Сергей Король</p>
-          <div class="management__info">
-            <p class="management__posiiton">Директор по развитию</p>
-            <p class="management__description">25 лет в недвижимости. Работал в крупнейших международных, местных девелоперских и консалтинговых компаниях. Ведущий эксперт страны в области развития и реализации коммерческой и жилой недвижимости.</p>
-          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -167,5 +192,7 @@
       </div>
     </div>
   </footer>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

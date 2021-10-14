@@ -1,0 +1,164 @@
+.management {
+  position: relative;
+  .offset(0; 50px 0 50px 0);
+  background-color: @grey;
+  background-image: url("../img/icon/management-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @media (min-width: @tablet-width) {
+    height: 100vh;
+    padding: 80px 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    background-position: left bottom;
+  }
+}
+
+.management__gallery {
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1205px;
+    margin: 0 auto;
+  }
+}
+
+.management__item {
+  min-height: 380px;
+
+  @media (min-width: @tablet-width) {
+    flex-grow: 1;
+    flex-basis: 334px;
+  }
+}
+
+.management__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 20px 20px 30px 20px;
+}
+
+.management__picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.management__name {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  .offset(-30px 0 0 0; 15px 0);
+  color: @white;
+  line-height: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 95%;
+    height: 100%;
+    background-color: @black;
+    z-index: -1;
+  }
+}
+
+.management__info {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 95%;
+  padding: 40px 25px;
+  background-color: @black1;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 0.6s ease;
+  z-index: 5;
+}
+
+.management__inner:hover .management__info {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transition: 0.6s ease;
+}
+
+.management__position {
+  .offset(0 0 30px 0; 0);
+  color: @white;
+}
+
+.management__description {
+  .offset(0; 0);
+  color: @white;
+}
+
+.management__decor-line {
+  position: absolute;
+  background-color: @white;
+}
+
+.management__decor-line--row {
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.management__decor-line--row-top {
+  top: 0;
+  transition: 0.8s ease;
+  transform: translateX(-450px);
+}
+
+.management__inner:hover .management__decor-line--row-top {
+  transform: translateX(0);
+}
+
+.management__decor-line--row-bottom {
+  bottom: 0;
+  transition: 0.8s ease;
+  transform: translateX(450px);
+}
+
+.management__inner:hover .management__decor-line--row-bottom {
+  transform: translateX(0);
+}
+
+.management__decor-line--column {
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.management__decor-line--column-right {
+  right: 0;
+  transform: translateY(450px);
+  transition: 0.8s ease;
+}
+
+.management__inner:hover .management__decor-line--column-right {
+  transform: translateY(0);
+}
+
+.management__decor-line--column-left {
+  left: 0;
+  transform: translateY(-450px);
+  transition: 0.8s ease;
+}
+
+.management__inner:hover .management__decor-line--column-left {
+  transform: translateY(0);
+}
+
