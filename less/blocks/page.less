@@ -1,0 +1,21 @@
+.page {
+  height: 100%;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.page__body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+  max-width: 1920px;
+  min-height: 100%;
+  .offset(0 auto; 0);
+  font-family: "Geometria", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  .typography(14px; 20px);
+  background-color: @white;
+  color: @black;
+}
