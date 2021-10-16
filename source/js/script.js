@@ -38,3 +38,41 @@ let managementSlider = function () {
 
 managementSlider();
 
+let aboutSlider = function () {
+  const swiper = new Swiper(".about__slider", {
+    grabCursor: true,
+    speed: 800,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+    breakpoints: {
+      1490: {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+          renderFraction: function (currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>' + ' - ' + '<span class="' + totalClass + '"></span>';
+          },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+    },
+  });
+};
+
+aboutSlider();
+
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 1489 && window.innerWidth < 1510) {
+    window.location.reload();
+  } else if (window.innerWidth < 1490 && window.innerWidth > 1480) {
+    window.location.reload();
+  }
+});
