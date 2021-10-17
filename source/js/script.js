@@ -76,3 +76,26 @@ window.addEventListener("resize", function() {
     window.location.reload();
   }
 });
+
+let gallerySlider = function () {
+
+  const swiperGallery = new Swiper(".gallery__slider", {
+    grabCursor: true,
+    loop: true,
+    speed: 800,
+    spaceBetween: 15,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+      renderFraction: function (currentClass, totalClass) {
+        return '<span class="' + currentClass + '"></span>' + ' - ' + '<span class="' + totalClass + '"></span>';
+      },
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+};
+
+gallerySlider();
