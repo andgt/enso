@@ -99,3 +99,21 @@ let gallerySlider = function () {
 };
 
 gallerySlider();
+
+let historySlider = function () {
+
+  const swiperHistory = new Swiper(".history__slider", {
+    grabCursor: true,
+    direction: "vertical",
+    slidesPerView: "auto",
+    loop: true,
+    speed: 800,
+    spaceBetween: 40,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+};
+
+historySlider();
