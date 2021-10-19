@@ -1,10 +1,32 @@
 // Стили для слайдера Swiper
 
+.main-slider {
+  @media (min-width: @desktop-width) {
+    max-height: 100vh;
+  }
+}
+
 .management__slider .swiper-pagination-bullet,
 .about__slider .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: @white;
+}
+
+.main-slider.swiper .swiper-pagination-bullets {
+  right: 40px;
+}
+
+.main-slider .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: @black1;
+  opacity: 0.8;
+}
+
+.main-slider .swiper-pagination-bullet-active {
+  background-color: @lightblue;
+  opacity: 1;
 }
 
 .about__slider .swiper-wrapper {

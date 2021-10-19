@@ -17,6 +17,44 @@ menuBtn.onclick = function() {
 
 // Swiper
 
+let mainSlider = function () {
+  const swiperMain = new Swiper(".main-slider", {
+    enabled: false,
+    mousewheel: {
+      sensitivity: 1,
+    },
+    breakpoints: {
+      1490: {
+        enabled: true,
+        direction: "vertical",
+        slidesPerView: 1,
+        speed: 800,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+      },
+    },
+  });
+};
+
+mainSlider();
+
+/*let mainMatch = window.matchMedia('(min-width: 768px)');
+let mainSliderDelete = document.querySelector(".main-slider");
+
+function sliderMainTablet (e) {
+  if (e.matches) {
+    mainSlider();
+  } else {
+    mainSliderDelete.classList.remove("swiper");
+  }
+};
+
+mainMatch.addListener(sliderMainTablet);
+sliderMainTablet(mainMatch);*/
+
 let managementSlider = function () {
 
   const swiper = new Swiper(".management__slider", {
