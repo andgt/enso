@@ -28,7 +28,7 @@ let mainSlider = function () {
         enabled: true,
         direction: "vertical",
         slidesPerView: 1,
-        speed: 800,
+        speed: 1000,
         pagination: {
           el: ".swiper-pagination",
           type: "bullets",
@@ -155,3 +155,31 @@ let historySlider = function () {
 };
 
 historySlider();
+
+// Эффекты для main-slider
+
+let mainSlides = document.querySelectorAll(".main__slide");
+
+let options = {
+  threshold: 0.2,
+};
+
+let callback = function (entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      let activeEl = entry.target;
+      activeEl.classList.add("main__slide--active");
+    } else {
+      let inactiveEl = entry.target;
+      inactiveEl.classList.remove("main__slide--active");
+    }
+  });
+};
+
+let observer = new IntersectionObserver(callback, options);
+
+mainSlides.forEach(element => {
+  observer.observe(element);
+});
+
+
