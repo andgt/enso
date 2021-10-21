@@ -28,7 +28,7 @@ let mainSlider = function () {
         enabled: true,
         direction: "vertical",
         slidesPerView: 1,
-        speed: 1000,
+        speed: 3000,
         pagination: {
           el: ".swiper-pagination",
           type: "bullets",
@@ -158,7 +158,7 @@ historySlider();
 
 // Эффекты для main-slider
 
-let mainSlides = document.querySelectorAll(".main__slide");
+/*let mainSlides = document.querySelectorAll(".main__slide");
 
 let options = {
   threshold: 0.2,
@@ -180,6 +180,11 @@ let observer = new IntersectionObserver(callback, options);
 
 mainSlides.forEach(element => {
   observer.observe(element);
-});
+});*/
 
-
+let pageBody = document.querySelector(".page__body");
+window.onwheel = function () {
+  pageBody.classList.remove("main__slide--active");
+  pageBody.offsetWidth;
+  pageBody.classList.add("main__slide--active");
+};
