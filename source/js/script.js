@@ -17,18 +17,20 @@ menuBtn.onclick = function() {
 
 // Swiper
 
-let mainSlider = function () {
+/*let mainSlider = function () {*/
   const swiperMain = new Swiper(".main-slider", {
     enabled: false,
+    effect: "slides",
     mousewheel: {
       sensitivity: 1,
     },
+    watchOverflow: true,
     breakpoints: {
       1490: {
         enabled: true,
         direction: "vertical",
         slidesPerView: 1,
-        speed: 3000,
+        speed: 2000,
         pagination: {
           el: ".swiper-pagination",
           type: "bullets",
@@ -37,27 +39,54 @@ let mainSlider = function () {
       },
     },
   });
-};
 
-mainSlider();
+  /*mainSliderDesktop();*/
 
-/*let mainMatch = window.matchMedia('(min-width: 768px)');
-let mainSliderDelete = document.querySelector(".main-slider");
+  /*let mainMatch = window.matchMedia('(min-width: 1490px)');
 
-function sliderMainTablet (e) {
-  if (e.matches) {
-    mainSlider();
-  } else {
-    mainSliderDelete.classList.remove("swiper");
+  function sliderMainTablet (e) {
+    if (e.matches === true) {
+      mainSliderDesktop();
+    } else if (e.matches === false) {
+      if (swiperMainDesktop) {
+        swiperMainDesktop.destroy();
+      }
+    }
+  };
+
+  mainMatch.addListener(sliderMainTablet);
+  sliderMainTablet(mainMatch);*/
+/*};
+
+mainSlider();*/
+
+// Маска для body
+
+let pageBody = document.querySelector(".page__body");
+
+let bodyMask = function () {
+  let count = 0;
+  let firstSlide = document.querySelector(".main__slide--first");
+
+  window.onwheel = function (event) {
+    let scrollTop = event.deltaY;
+    count += scrollTop;
+    let currentSlide = swiperMain.activeIndex;
+    pageBody.classList.remove("main__slide--active");
+    pageBody.offsetWidth;
+    pageBody.classList.add("main__slide--active");
+    if (currentSlide === 0 && scrollTop === -100) {
+      pageBody.classList.remove("main__slide--active");
+    }
   }
 };
 
-mainMatch.addListener(sliderMainTablet);
-sliderMainTablet(mainMatch);*/
+bodyMask();
 
 let managementSlider = function () {
 
   const swiper = new Swiper(".management__slider", {
+    nested: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -77,7 +106,8 @@ let managementSlider = function () {
 managementSlider();
 
 let aboutSlider = function () {
-  const swiper = new Swiper(".about__slider", {
+  const swiperAbout = new Swiper(".about__slider", {
+    nested: true,
     grabCursor: true,
     speed: 800,
     spaceBetween: 20,
@@ -107,14 +137,6 @@ let aboutSlider = function () {
 
 aboutSlider();
 
-window.addEventListener("resize", function() {
-  if (window.innerWidth > 1489 && window.innerWidth < 1510) {
-    window.location.reload();
-  } else if (window.innerWidth < 1490 && window.innerWidth > 1480) {
-    window.location.reload();
-  }
-});
-
 let gallerySlider = function () {
 
   const swiperGallery = new Swiper(".gallery__slider", {
@@ -141,6 +163,7 @@ gallerySlider();
 let historySlider = function () {
 
   const swiperHistory = new Swiper(".history__slider", {
+    nested: true,
     grabCursor: true,
     direction: "vertical",
     slidesPerView: "auto",
@@ -155,6 +178,16 @@ let historySlider = function () {
 };
 
 historySlider();
+
+// Для обновления пагинации слайдеров при ресайзе
+
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 1469 && window.innerWidth < 1510) {
+    window.location.reload();
+  } else if (window.innerWidth < 1490 && window.innerWidth > 1480) {
+    window.location.reload();
+  }
+});
 
 // Эффекты для main-slider
 
@@ -181,10 +214,3 @@ let observer = new IntersectionObserver(callback, options);
 mainSlides.forEach(element => {
   observer.observe(element);
 });*/
-
-let pageBody = document.querySelector(".page__body");
-window.onwheel = function () {
-  pageBody.classList.remove("main__slide--active");
-  pageBody.offsetWidth;
-  pageBody.classList.add("main__slide--active");
-};

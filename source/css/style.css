@@ -2,10 +2,10 @@
   0% {
     transform: translateY(100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
   }
-  10% {
+  15% {
     transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
   }
-  50% {
+  60% {
     transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
   }
   100% {
@@ -16,10 +16,10 @@
   0% {
     transform: translateY(100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
   }
-  10% {
+  15% {
     transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
   }
-  50% {
+  60% {
     transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
   }
   100% {
@@ -81,6 +81,11 @@ a {
 .header {
   margin: 0 0 20px 0;
   padding: 20px 0 0 0;
+}
+@media (min-width: 768px) {
+  .header {
+    margin-bottom: 0;
+  }
 }
 @media (min-width: 1490px) {
   .header {
@@ -411,8 +416,8 @@ a {
     background-color: #000000;
     -webkit-animation-name: mainactive;
             animation-name: mainactive;
-    -webkit-animation-duration: 4s;
-            animation-duration: 4s;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
     transform: translateY(-100%);
     z-index: 300;
   }
