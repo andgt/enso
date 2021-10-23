@@ -17,14 +17,14 @@ menuBtn.onclick = function() {
 
 // Swiper
 
-/*let mainSlider = function () {*/
+let mainSlider = function () {
   const swiperMain = new Swiper(".main-slider", {
     enabled: false,
     effect: "slides",
+    simulateTouch: false,
     mousewheel: {
       sensitivity: 1,
     },
-    watchOverflow: true,
     breakpoints: {
       1490: {
         enabled: true,
@@ -38,50 +38,62 @@ menuBtn.onclick = function() {
         },
       },
     },
-  });
+  })
+};
 
-  /*mainSliderDesktop();*/
-
-  /*let mainMatch = window.matchMedia('(min-width: 1490px)');
-
-  function sliderMainTablet (e) {
-    if (e.matches === true) {
-      mainSliderDesktop();
-    } else if (e.matches === false) {
-      if (swiperMainDesktop) {
-        swiperMainDesktop.destroy();
-      }
-    }
-  };
-
-  mainMatch.addListener(sliderMainTablet);
-  sliderMainTablet(mainMatch);*/
-/*};
-
-mainSlider();*/
+mainSlider();
 
 // Маска для body
 
-let pageBody = document.querySelector(".page__body");
-
 let bodyMask = function () {
-  let count = 0;
-  let firstSlide = document.querySelector(".main__slide--first");
+  let pageBody = document.querySelector(".page__body");
 
   window.onwheel = function (event) {
     let scrollTop = event.deltaY;
-    count += scrollTop;
-    let currentSlide = swiperMain.activeIndex;
+    let target = event.target;
+
     pageBody.classList.remove("main__slide--active");
     pageBody.offsetWidth;
     pageBody.classList.add("main__slide--active");
-    if (currentSlide === 0 && scrollTop === -100) {
+
+    if ((target.classList.contains("promo") || target.closest(".promo")) && (scrollTop === -100)) {
       pageBody.classList.remove("main__slide--active");
     }
+
+    if ((target.classList.contains("history") || target.closest(".history")) && (scrollTop === 100)) {
+      pageBody.classList.remove("main__slide--active");
+    }
+
+    if ((target.classList.contains("footer") || target.closest("footer"))) {
+      pageBody.classList.remove("main__slide--active");
+    }
+
+    if ((target.classList.contains("header") || target.closest("header"))) {
+      pageBody.classList.remove("main__slide--active");
+    }
+  };
+
+  let bullets = document.querySelectorAll(".swiper-pagination-bullet");
+  bullets.forEach(bullet => {
+    bullet.onclick = function () {
+      pageBody.classList.remove("main__slide--active");
+      pageBody.offsetWidth;
+      pageBody.classList.add("main__slide--active");
+    }
+  });
+};
+
+let mainMatch = window.matchMedia("(min-width: 1490px)");
+
+window.onload = function () {
+  if (mainMatch.matches) {
+    bodyMask();
+  } else {
+    false;
   }
 };
 
-bodyMask();
+// Слайдер для блока management
 
 let managementSlider = function () {
 
@@ -179,7 +191,7 @@ let historySlider = function () {
 
 historySlider();
 
-// Для обновления пагинации слайдеров при ресайзе
+// Для обновления слайдеров при ресайзе
 
 window.addEventListener("resize", function() {
   if (window.innerWidth > 1469 && window.innerWidth < 1510) {
@@ -188,29 +200,3 @@ window.addEventListener("resize", function() {
     window.location.reload();
   }
 });
-
-// Эффекты для main-slider
-
-/*let mainSlides = document.querySelectorAll(".main__slide");
-
-let options = {
-  threshold: 0.2,
-};
-
-let callback = function (entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      let activeEl = entry.target;
-      activeEl.classList.add("main__slide--active");
-    } else {
-      let inactiveEl = entry.target;
-      inactiveEl.classList.remove("main__slide--active");
-    }
-  });
-};
-
-let observer = new IntersectionObserver(callback, options);
-
-mainSlides.forEach(element => {
-  observer.observe(element);
-});*/

@@ -1,45 +1,45 @@
 @-webkit-keyframes mainactive {
   0% {
-    transform: translateY(100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
+    transform: translateY(100%);
   }
-  15% {
-    transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
+  10% {
+    transform: translateY(0);
   }
   60% {
-    transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(-100%) /*matrix(1, 0.3, 0, 1, 0, 0)*/;
+    transform: translateY(-100%);
   }
 }
 @keyframes mainactive {
   0% {
-    transform: translateY(100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
+    transform: translateY(100%);
   }
-  15% {
-    transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
+  10% {
+    transform: translateY(0);
   }
   60% {
-    transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(-100%) /*matrix(1, 0.3, 0, 1, 0, 0)*/;
+    transform: translateY(-100%);
   }
 }
 @-webkit-keyframes maininactive {
   0% {
-    transform: translateX(-100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
+    transform: translateX(-100%) /;
   }
   100% {
-    transform: translateX(0) /*matrix(1, 0.3, 0, 1, 0, 0)*/;
+    transform: translateX(0);
   }
 }
 @keyframes maininactive {
   0% {
-    transform: translateX(-100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
+    transform: translateX(-100%) /;
   }
   100% {
-    transform: translateX(0) /*matrix(1, 0.3, 0, 1, 0, 0)*/;
+    transform: translateX(0);
   }
 }
 *,
@@ -416,8 +416,8 @@ a {
     background-color: #000000;
     -webkit-animation-name: mainactive;
             animation-name: mainactive;
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s;
     transform: translateY(-100%);
     z-index: 300;
   }
@@ -448,7 +448,8 @@ a {
 }
 @media (min-width: 768px) {
   .main__subtitle {
-    margin-bottom: 67px;
+    margin-top: 37px;
+    margin-bottom: 47px;
     font-size: 40px;
     line-height: 46px;
   }
