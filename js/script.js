@@ -20,6 +20,8 @@ menuBtn.onclick = function() {
 let mainSlider = function () {
   const swiperMain = new Swiper(".main-slider", {
     enabled: false,
+    effect: "slides",
+    simulateTouch: false,
     mousewheel: {
       sensitivity: 1,
     },
@@ -28,7 +30,7 @@ let mainSlider = function () {
         enabled: true,
         direction: "vertical",
         slidesPerView: 1,
-        speed: 3000,
+        speed: 2000,
         pagination: {
           el: ".swiper-pagination",
           type: "bullets",
@@ -36,28 +38,67 @@ let mainSlider = function () {
         },
       },
     },
-  });
+  })
 };
 
 mainSlider();
 
-/*let mainMatch = window.matchMedia('(min-width: 768px)');
-let mainSliderDelete = document.querySelector(".main-slider");
+// Маска для body
 
-function sliderMainTablet (e) {
-  if (e.matches) {
-    mainSlider();
+let bodyMask = function () {
+  let pageBody = document.querySelector(".page__body");
+
+  window.onwheel = function (event) {
+    let scrollTop = event.deltaY;
+    let target = event.target;
+
+    pageBody.classList.remove("main__slide--active");
+    pageBody.offsetWidth;
+    pageBody.classList.add("main__slide--active");
+
+    if ((target.classList.contains("promo") || target.closest(".promo")) && (scrollTop === -100)) {
+      pageBody.classList.remove("main__slide--active");
+    }
+
+    if ((target.classList.contains("history") || target.closest(".history")) && (scrollTop === 100)) {
+      pageBody.classList.remove("main__slide--active");
+    }
+
+    if ((target.classList.contains("footer") || target.closest("footer"))) {
+      pageBody.classList.remove("main__slide--active");
+    }
+
+    if ((target.classList.contains("header") || target.closest("header"))) {
+      pageBody.classList.remove("main__slide--active");
+    }
+  };
+
+  let bullets = document.querySelectorAll(".swiper-pagination-bullet");
+  bullets.forEach(bullet => {
+    bullet.onclick = function () {
+      pageBody.classList.remove("main__slide--active");
+      pageBody.offsetWidth;
+      pageBody.classList.add("main__slide--active");
+    }
+  });
+};
+
+let mainMatch = window.matchMedia("(min-width: 1490px)");
+
+window.onload = function () {
+  if (mainMatch.matches) {
+    bodyMask();
   } else {
-    mainSliderDelete.classList.remove("swiper");
+    false;
   }
 };
 
-mainMatch.addListener(sliderMainTablet);
-sliderMainTablet(mainMatch);*/
+// Слайдер для блока management
 
 let managementSlider = function () {
 
   const swiper = new Swiper(".management__slider", {
+    nested: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -77,7 +118,8 @@ let managementSlider = function () {
 managementSlider();
 
 let aboutSlider = function () {
-  const swiper = new Swiper(".about__slider", {
+  const swiperAbout = new Swiper(".about__slider", {
+    nested: true,
     grabCursor: true,
     speed: 800,
     spaceBetween: 20,
@@ -107,14 +149,6 @@ let aboutSlider = function () {
 
 aboutSlider();
 
-window.addEventListener("resize", function() {
-  if (window.innerWidth > 1489 && window.innerWidth < 1510) {
-    window.location.reload();
-  } else if (window.innerWidth < 1490 && window.innerWidth > 1480) {
-    window.location.reload();
-  }
-});
-
 let gallerySlider = function () {
 
   const swiperGallery = new Swiper(".gallery__slider", {
@@ -141,6 +175,7 @@ gallerySlider();
 let historySlider = function () {
 
   const swiperHistory = new Swiper(".history__slider", {
+    nested: true,
     grabCursor: true,
     direction: "vertical",
     slidesPerView: "auto",
@@ -156,35 +191,12 @@ let historySlider = function () {
 
 historySlider();
 
-// Эффекты для main-slider
+// Для обновления слайдеров при ресайзе
 
-/*let mainSlides = document.querySelectorAll(".main__slide");
-
-let options = {
-  threshold: 0.2,
-};
-
-let callback = function (entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      let activeEl = entry.target;
-      activeEl.classList.add("main__slide--active");
-    } else {
-      let inactiveEl = entry.target;
-      inactiveEl.classList.remove("main__slide--active");
-    }
-  });
-};
-
-let observer = new IntersectionObserver(callback, options);
-
-mainSlides.forEach(element => {
-  observer.observe(element);
-});*/
-
-let pageBody = document.querySelector(".page__body");
-window.onwheel = function () {
-  pageBody.classList.remove("main__slide--active");
-  pageBody.offsetWidth;
-  pageBody.classList.add("main__slide--active");
-};
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 1469 && window.innerWidth < 1510) {
+    window.location.reload();
+  } else if (window.innerWidth < 1490 && window.innerWidth > 1480) {
+    window.location.reload();
+  }
+});

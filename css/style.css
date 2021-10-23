@@ -1,45 +1,45 @@
 @-webkit-keyframes mainactive {
   0% {
-    transform: translateY(100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
+    transform: translateY(100%);
   }
   10% {
-    transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
+    transform: translateY(0);
   }
-  50% {
-    transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
+  60% {
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(-100%) /*matrix(1, 0.3, 0, 1, 0, 0)*/;
+    transform: translateY(-100%);
   }
 }
 @keyframes mainactive {
   0% {
-    transform: translateY(100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
+    transform: translateY(100%);
   }
   10% {
-    transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
+    transform: translateY(0);
   }
-  50% {
-    transform: translateY(0) /*matrix(1, 0.2, 0, 1, 0, 0)*/;
+  60% {
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(-100%) /*matrix(1, 0.3, 0, 1, 0, 0)*/;
+    transform: translateY(-100%);
   }
 }
 @-webkit-keyframes maininactive {
   0% {
-    transform: translateX(-100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
+    transform: translateX(-100%) /;
   }
   100% {
-    transform: translateX(0) /*matrix(1, 0.3, 0, 1, 0, 0)*/;
+    transform: translateX(0);
   }
 }
 @keyframes maininactive {
   0% {
-    transform: translateX(-100%) /*matrix(1, 0, 0, 1, 0, 0)*/;
+    transform: translateX(-100%) /;
   }
   100% {
-    transform: translateX(0) /*matrix(1, 0.3, 0, 1, 0, 0)*/;
+    transform: translateX(0);
   }
 }
 *,
@@ -81,6 +81,11 @@ a {
 .header {
   margin: 0 0 20px 0;
   padding: 20px 0 0 0;
+}
+@media (min-width: 768px) {
+  .header {
+    margin-bottom: 0;
+  }
 }
 @media (min-width: 1490px) {
   .header {
@@ -443,7 +448,8 @@ a {
 }
 @media (min-width: 768px) {
   .main__subtitle {
-    margin-bottom: 67px;
+    margin-top: 37px;
+    margin-bottom: 47px;
     font-size: 40px;
     line-height: 46px;
   }
