@@ -20,7 +20,7 @@ menuBtn.onclick = function() {
 let mainSlider = function () {
   const swiperMain = new Swiper(".main-slider", {
     enabled: false,
-    effect: "slides",
+    effect: "fade",
     simulateTouch: false,
     mousewheel: {
       sensitivity: 1,
@@ -30,7 +30,7 @@ let mainSlider = function () {
         enabled: true,
         direction: "vertical",
         slidesPerView: 1,
-        speed: 2000,
+        speed: 2400,
         pagination: {
           el: ".swiper-pagination",
           type: "bullets",
@@ -38,7 +38,7 @@ let mainSlider = function () {
         },
       },
     },
-  })
+  });
 };
 
 mainSlider();
@@ -98,7 +98,6 @@ window.onload = function () {
 let managementSlider = function () {
 
   const swiper = new Swiper(".management__slider", {
-    nested: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -119,10 +118,10 @@ managementSlider();
 
 let aboutSlider = function () {
   const swiperAbout = new Swiper(".about__slider", {
-    nested: true,
     grabCursor: true,
     speed: 800,
     spaceBetween: 20,
+    effect: "slide",
     pagination: {
       el: ".swiper-pagination",
       type: "bullets",
@@ -175,7 +174,7 @@ gallerySlider();
 let historySlider = function () {
 
   const swiperHistory = new Swiper(".history__slider", {
-    nested: true,
+    /*nested: true,*/
     grabCursor: true,
     direction: "vertical",
     slidesPerView: "auto",
