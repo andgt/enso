@@ -193,9 +193,11 @@
   color: var(--swiper-navigation-color, var(--swiper-theme-color));
 }
 /* Делает активными кнопки при fade-эффекте у main-slider */
-.swiper-button-prev-nested,
-.swiper-button-next-nested {
-  pointer-events: auto;
+@media (max-width: 1489px) {
+  .swiper-button-prev-nested,
+  .swiper-button-next-nested {
+    pointer-events: auto;
+  }
 }
 .swiper-button-prev.swiper-button-disabled,
 .swiper-button-next.swiper-button-disabled {
@@ -529,13 +531,9 @@ button.swiper-pagination-bullet {
     pointer-events: auto;
   }
 }
-@media(min-width: 1490px) {
- .swiper-fade .swiper-slide .management__item.swiper-slide {
-    pointer-events: auto;
-  }
-}
 .swiper-fade .swiper-slide-active,
-.swiper-fade .swiper-slide-active .swiper-slide-active {
+.swiper-fade .swiper-slide-active .swiper-slide-active,
+.swiper-fade .swiper-slide-active .management__item.swiper-slide-next {
   pointer-events: auto;
 }
 .swiper-cube {
