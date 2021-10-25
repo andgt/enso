@@ -13,7 +13,7 @@ menuBtn.onclick = function() {
     mainNav.classList.add('main-nav--closed');
     mainNav.classList.remove('main-nav--opened');
   }
-}
+};
 
 // Swiper
 
@@ -48,30 +48,26 @@ mainSlider();
 let bodyMask = function () {
   let pageBody = document.querySelector(".page__body");
 
-  window.onwheel = function (event) {
-    let scrollTop = event.deltaY;
-    let target = event.target;
+  let mainSlides = document.querySelectorAll(".main__slide");
 
-    pageBody.classList.remove("main__slide--active");
-    pageBody.offsetWidth;
-    pageBody.classList.add("main__slide--active");
+  mainSlides.forEach(mainSlide => {
 
-    if ((target.classList.contains("promo") || target.closest(".promo")) && (scrollTop === -100)) {
+    mainSlide.onwheel = function (event) {
+      let scrollTop = event.deltaY;
+
       pageBody.classList.remove("main__slide--active");
-    }
+      pageBody.offsetWidth;
+      pageBody.classList.add("main__slide--active");
 
-    if ((target.classList.contains("history") || target.closest(".history")) && (scrollTop === 100)) {
-      pageBody.classList.remove("main__slide--active");
-    }
+      if (mainSlide.classList.contains("main__slide--first") && (scrollTop === -100)) {
+        pageBody.classList.remove("main__slide--active");
+      }
 
-    if ((target.classList.contains("footer") || target.closest("footer"))) {
-      pageBody.classList.remove("main__slide--active");
+      if (mainSlide.classList.contains("main__slide--last") && (scrollTop === 100)) {
+        pageBody.classList.remove("main__slide--active");
+      }
     }
-
-    if ((target.classList.contains("header") || target.closest("header"))) {
-      pageBody.classList.remove("main__slide--active");
-    }
-  };
+  });
 
   let bullets = document.querySelectorAll(".swiper-pagination-bullet");
   bullets.forEach(bullet => {
@@ -174,7 +170,6 @@ gallerySlider();
 let historySlider = function () {
 
   const swiperHistory = new Swiper(".history__slider", {
-    /*nested: true,*/
     grabCursor: true,
     direction: "vertical",
     slidesPerView: "auto",
