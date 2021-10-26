@@ -67,7 +67,6 @@ mainSlider();
 
 let bodyMask = function () {
   let pageBody = document.querySelector(".page__body");
-
   let mainSlides = document.querySelectorAll(".main__slide");
 
   mainSlides.forEach(mainSlide => {
