@@ -15,6 +15,26 @@ menuBtn.onclick = function() {
   }
 };
 
+// Кнопка наверх
+
+let buttonUp = function() {
+  let buttonTop = document.querySelector(".button__top");
+
+  if (window.pageYOffset > 100) {
+    buttonTop.classList.add("button__top--showed");
+  } else {
+    buttonTop.classList.remove("button__top--showed");
+  }
+
+  buttonTop.onclick = function() {
+    window.scrollTo(0, 0);
+  }
+};
+
+window.onscroll = function() {
+  buttonUp();
+};
+
 // Swiper
 
 let mainSlider = function () {
