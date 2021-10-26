@@ -1266,12 +1266,94 @@ a {
   font-size: 10px;
   line-height: 14px;
   text-transform: uppercase;
-  color: #8a8a8a;
+  color: #000000;
 }
 .social {
   display: flex;
   flex-wrap: wrap;
   gap: 0 20px;
+}
+.button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+@media (max-width: 1489px) {
+  .button__top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    bottom: 60px;
+    left: auto;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #333333;
+    border-radius: 5px;
+    transition: 0.5s ease;
+    box-shadow: 0 0 10px 3px #4d4d4d;
+  }
+  .button__top::before,
+  .button__top::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    width: 2px;
+    height: 12px;
+    background-color: #d1d1d1;
+    transition: 0.5s ease;
+  }
+  .button__top::before {
+    left: 11px;
+    transform: rotate(32deg);
+  }
+  .button__top::after {
+    left: auto;
+    right: 11px;
+    transform: rotate(-32deg);
+  }
+  .button__top:hover {
+    background-color: #000000;
+    transition: 0.5s ease;
+  }
+  .button__top:hover::before,
+  .button__top:hover::after {
+    background-color: #ffffff;
+  }
+  .button__top--showed {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s ease;
+  }
+}
+@media (max-width: 1489px) and (min-width: 768px) {
+  .button__top {
+    bottom: 20px;
+    left: auto;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  .button__top::before,
+  .button__top::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    width: 2px;
+    height: 15px;
+    background-color: #d1d1d1;
+    transition: 0.5s ease;
+  }
+  .button__top::before {
+    left: 15px;
+    transform: rotate(32deg);
+  }
+  .button__top::after {
+    left: auto;
+    right: 15px;
+    transform: rotate(-32deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

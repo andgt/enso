@@ -1,0 +1,90 @@
+.button {
+  .offset(0; 0);
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 1489px) {
+  .button__top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    bottom: 60px;
+    left: auto;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: @grey;
+    border-radius: 5px;
+    transition: 0.5s ease;
+    box-shadow: 0 0 10px 3px @grey2;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 2px;
+      height: 12px;
+      background-color: @white1;
+      transition: 0.5s ease;
+    }
+
+    &::before {
+      left: 11px;
+      transform: rotate(32deg);
+    }
+
+    &::after {
+      left: auto;
+      right: 11px;
+      transform: rotate(-32deg);
+    }
+
+    &:hover {
+      background-color: @black;
+      transition: 0.5s ease;
+
+      &::before,
+      &::after {
+        background-color: @white;
+      }
+    }
+
+    @media (min-width: @tablet-width) {
+      bottom: 20px;
+      left: auto;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 12px;
+        width: 2px;
+        height: 15px;
+        background-color: @white1;
+        transition: 0.5s ease;
+      }
+
+      &::before {
+        left: 15px;
+        transform: rotate(32deg);
+      }
+
+      &::after {
+        left: auto;
+        right: 15px;
+        transform: rotate(-32deg);
+      }
+    }
+  }
+
+  .button__top--showed {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s ease;
+  }
+}
