@@ -518,9 +518,11 @@ button.swiper-pagination-bullet {
 .swiper-fade.swiper-free-mode .swiper-slide {
   transition-timing-function: ease-out;
 }
-.swiper-fade .swiper-slide {
-  pointer-events: none;
-  transition-property: opacity;
+@media (min-width: 768px) {
+  .swiper-fade .swiper-slide {
+    pointer-events: none;
+    transition-property: opacity;
+  }
 }
 .swiper-fade .swiper-slide .swiper-slide {
   pointer-events: none;

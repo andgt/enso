@@ -35,6 +35,17 @@ window.onscroll = function() {
   buttonUp();
 };
 
+// Кнопки подробнее
+
+let aboutBtn = document.querySelectorAll(".about__btn");
+
+aboutBtn.forEach(element => {
+  element.onclick = function(e) {
+    e.preventDefault();
+    console.log(1);
+  }
+});
+
 // Swiper
 
 let mainSlider = function () {
