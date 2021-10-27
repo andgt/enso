@@ -113,6 +113,7 @@ a {
   .header {
     position: fixed;
     width: 100%;
+    max-width: 1920px;
     z-index: 100;
   }
   .header::before {
@@ -410,6 +411,7 @@ a {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
+  min-height: 768px;
 }
 .main__wrapper {
   flex-direction: column;
@@ -584,6 +586,7 @@ a {
 @media (min-width: 768px) {
   .management {
     height: 100vh;
+    min-height: 768px;
     padding: 80px 0;
   }
 }
