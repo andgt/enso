@@ -113,14 +113,6 @@ bodyMask();
 
 let mainMatch = window.matchMedia("(min-width: 1490px)");
 
-/*window.onload = function () {
-  if (mainMatch.matches) {
-    bodyMask();
-  } else {
-    false;
-  }
-};*/
-
 // Слайдер для блока management
 
 let managementSlider = function () {
