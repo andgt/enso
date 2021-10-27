@@ -78,26 +78,26 @@ mainSlider();
 
 let bodyMask = function () {
   let pageBody = document.querySelector(".page__body");
-  let mainSlides = document.querySelectorAll(".main__slide");
 
-  mainSlides.forEach(mainSlide => {
+  window.onwheel = function (event) {
+    let scrollTop = event.deltaY;
+    let target = event.target;
 
-    mainSlide.onwheel = function (event) {
-      let scrollTop = event.deltaY;
+    console.log(scrollTop);
 
+    pageBody.classList.remove("main__slide--active");
+    pageBody.offsetWidth;
+    pageBody.classList.add("main__slide--active");
+
+    if ((target.classList.contains("promo") || target.closest(".promo")) && scrollTop < 0) {
       pageBody.classList.remove("main__slide--active");
-      pageBody.offsetWidth;
-      pageBody.classList.add("main__slide--active");
-
-      if (mainSlide.classList.contains("main__slide--first") && (scrollTop === -100)) {
-        pageBody.classList.remove("main__slide--active");
-      }
-
-      if (mainSlide.classList.contains("main__slide--last") && (scrollTop === 100)) {
-        pageBody.classList.remove("main__slide--active");
-      }
     }
-  });
+
+    if (target.classList.contains("history") || target.closest(".history") && scrollTop > 0) {
+      pageBody.classList.remove("main__slide--active");
+    }
+
+  };
 
   let bullets = document.querySelectorAll(".swiper-pagination-bullet");
   bullets.forEach(bullet => {
@@ -109,15 +109,17 @@ let bodyMask = function () {
   });
 };
 
+bodyMask();
+
 let mainMatch = window.matchMedia("(min-width: 1490px)");
 
-window.onload = function () {
+/*window.onload = function () {
   if (mainMatch.matches) {
     bodyMask();
   } else {
     false;
   }
-};
+};*/
 
 // Слайдер для блока management
 
