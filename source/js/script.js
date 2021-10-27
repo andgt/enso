@@ -42,7 +42,6 @@ let aboutBtn = document.querySelectorAll(".about__btn");
 aboutBtn.forEach(element => {
   element.onclick = function(e) {
     e.preventDefault();
-    console.log(1);
   }
 });
 
@@ -83,8 +82,6 @@ let bodyMask = function () {
     let scrollTop = event.deltaY;
     let target = event.target;
 
-    console.log(scrollTop);
-
     pageBody.classList.remove("main__slide--active");
     pageBody.offsetWidth;
     pageBody.classList.add("main__slide--active");
@@ -96,7 +93,6 @@ let bodyMask = function () {
     if (target.classList.contains("history") || target.closest(".history") && scrollTop > 0) {
       pageBody.classList.remove("main__slide--active");
     }
-
   };
 
   let bullets = document.querySelectorAll(".swiper-pagination-bullet");
