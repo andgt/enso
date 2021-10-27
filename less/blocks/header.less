@@ -1,15 +1,19 @@
 .header {
-  .offset(0 0 20px 0; 20px 0 0 0);
+  position: fixed;
+  width: 100%;
+  .offset(0 0 20px 0; 10px 0 10px 0);
+  background: rgba(34, 92, 199, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(12, 96, 250, 0.4);
+  backdrop-filter: blur(2.5px);
+  z-index: 100;
 
   @media (min-width: @tablet-width) {
     margin-bottom: 0;
+    backdrop-filter: blur(5.5px);
   }
 
   @media (min-width: @desktop-width) {
-    position: fixed;
-    width: 100%;
     max-width: 1920px;
-    z-index: 100;
 
     &::before {
       content: "";
