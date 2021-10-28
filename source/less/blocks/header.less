@@ -2,8 +2,8 @@
   position: fixed;
   width: 100%;
   .offset(0 0 20px 0; 10px 0 10px 0);
-  background: rgba(34, 92, 199, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(12, 96, 250, 0.4);
+  background-color: @lightblue1;
+  box-shadow: 0 8px 32px 0 @lightblue2;
   backdrop-filter: blur(2.5px);
   z-index: 100;
 
@@ -26,6 +26,14 @@
       opacity: 0.6;
       z-index: 2;
     }
+  }
+}
+
+@-moz-document url-prefix("") {
+  .header {
+    background-color: @lightblue3;
+    box-shadow: 0 8px 32px 0 @lightblue2;
+    filter: grayscale(30%);
   }
 }
 
