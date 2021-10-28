@@ -105,7 +105,7 @@ a {
   width: 100%;
   margin: 0 0 20px 0;
   padding: 10px 0 10px 0;
-  background: rgba(34, 92, 199, 0.25);
+  background-color: rgba(34, 92, 199, 0.25);
   box-shadow: 0 8px 32px 0 rgba(12, 96, 250, 0.4);
   -webkit-backdrop-filter: blur(2.5px);
           backdrop-filter: blur(2.5px);
@@ -132,6 +132,13 @@ a {
     background-color: #87cefa;
     opacity: 0.6;
     z-index: 2;
+  }
+}
+@-moz-document url-prefix() {
+  .header {
+    background-color: rgba(12, 96, 250, 0.9);
+    box-shadow: 0 8px 32px 0 rgba(12, 96, 250, 0.4);
+    filter: grayscale(30%);
   }
 }
 @media (min-width: 768px) {
