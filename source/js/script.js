@@ -105,9 +105,11 @@ let bodyMask = function () {
   });
 };
 
-bodyMask();
-
-let mainMatch = window.matchMedia("(min-width: 1490px)");
+if (window.innerWidth > 1489) {
+  bodyMask();
+} else {
+  false;
+}
 
 // Слайдер для блока management
 
