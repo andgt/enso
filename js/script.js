@@ -77,23 +77,26 @@ mainSlider();
 
 let bodyMask = function () {
   let pageBody = document.querySelector(".page__body");
+  let mainSlides = document.querySelectorAll(".main__slide");
 
-  window.onwheel = function (event) {
-    let scrollTop = event.deltaY;
-    let target = event.target;
+  mainSlides.forEach(mainSlide => {
+    mainSlide.onwheel = function (event) {
+      let scrollTop = event.deltaY;
+      let target = event.target;
 
-    pageBody.classList.remove("main__slide--active");
-    pageBody.offsetWidth;
-    pageBody.classList.add("main__slide--active");
-
-    if ((target.classList.contains("promo") || target.closest(".promo")) && scrollTop < 0) {
       pageBody.classList.remove("main__slide--active");
-    }
+      pageBody.offsetWidth;
+      pageBody.classList.add("main__slide--active");
 
-    if (target.classList.contains("history") || target.closest(".history") && scrollTop > 0) {
-      pageBody.classList.remove("main__slide--active");
-    }
-  };
+      if ((target.classList.contains("promo") || target.closest(".promo")) && scrollTop < 0) {
+        pageBody.classList.remove("main__slide--active");
+      }
+
+      if (target.classList.contains("history") || target.closest(".history") && scrollTop > 0) {
+        pageBody.classList.remove("main__slide--active");
+      }
+    };
+  });
 
   let bullets = document.querySelectorAll(".swiper-pagination-bullet");
   bullets.forEach(bullet => {
