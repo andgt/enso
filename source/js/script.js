@@ -111,6 +111,14 @@ if (window.innerWidth > 1489) {
   false;
 }
 
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 1489) {
+    bodyMask();
+  } else {
+    false;
+  }
+});
+
 // Слайдер для блока management
 
 let managementSlider = function () {
