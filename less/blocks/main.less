@@ -42,6 +42,25 @@
   }
 }
 
+.main__container {
+  @media (min-width: @desktop-width) {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 3s ease;
+  }
+}
+
+.swiper-slide-active .main__container {
+  @media (min-width: @desktop-width) {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
+  }
+}
+
 .main__title {
   .offset(0 0 20px 0; 0);
   .typography(28px; normal);

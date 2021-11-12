@@ -467,6 +467,23 @@ a {
     transform: translateY(-100%);
   }
 }
+@media (min-width: 1490px) {
+  .main__container {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 3s ease;
+  }
+}
+@media (min-width: 1490px) {
+  .swiper-slide-active .main__container {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
+  }
+}
 .main__title {
   margin: 0 0 20px 0;
   padding: 0;
