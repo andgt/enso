@@ -596,6 +596,7 @@ a {
   font-size: 20px;
   line-height: 26px;
   font-family: "PFAgoraSlabPro", "Times New Roman", serif;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .mission__text--main {
@@ -1251,9 +1252,6 @@ a {
 .history__wrapper {
   padding-top: 40px;
 }
-/*.history__item {
-  margin-top: 20px;
-}*/
 .history__date {
   display: flex;
   flex-direction: column;
